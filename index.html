@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>斗图搜索神器</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="img/zhangxueyou.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/amazeui.min.css">
+    <link rel="stylesheet" href="css/petshow.css?6">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/amazeui.min.js"></script>
+    <script src="js/countUp.min.js"></script>
+    <script src="js/amazeui.lazyload.min.js"></script>
+    <style>
+        .am_footer_con {
+            max-width: 1500px;
+            text-align: center;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 0 10px 0px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <header class="am-topbar am-topbar-inverse">
+        <div class="amz-container">
+            <h1 class="am-topbar-brand">
+                <a href="#" class="am-topbar-logo">
+                    万古唯一，举世无双
+                </a>
+            </h1>
+            <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only"
+                    data-am-collapse="{target: '#doc-topbar-collapse-5'}">
+                <span class="am-sr-only">
+                    导航切换
+                </span>
+                <span class="am-icon-bars">
+                </span>
+            </button>
+            <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse-5">
+                <ul class="am-nav am-nav-pills am-topbar-nav">
+                    <li class="am-active">
+                        <a href="#">
+                            赞助合作，请添加作者微信：a708915622
+                        </a>
+                    </li>
+                    <!--<li class="am-dropdown" data-am-dropdown="">
+                        <a class="am-dropdown-toggle" data-am-dropdown-toggle="" href="javascript:;">
+                            发现萌宠
+                            <span class="am-icon-caret-down">
+                            </span>
+                        </a>
+                        <ul class="am-dropdown-content">
+                            <li>
+                                <a href="#">
+                                    编辑推荐
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    人气排行
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    最新发布
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    语音涂鸦
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            萌宠趣闻
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            萌宠专题
+                        </a>
+                    </li>
+                    <li class="am-dropdown" data-am-dropdown="">
+                        <a class="am-dropdown-toggle" data-am-dropdown-toggle="" href="javascript:;">
+                            萌宠服务
+                            <span class="am-icon-caret-down">
+                            </span>
+                        </a>
+                        <ul class="am-dropdown-content">
+                            <li>
+                                <a href="#">
+                                    宠物医院
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    宠物美容
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    宠物店铺
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    更多服务
+                                </a>
+                            </li>
+                        </ul>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="get">
+        <div class="am-g">
+            <div class="am-u-lg-12">
+                <div class="get-title">
+                    <div class="get_font_left"><img src="img/font_yjy.png" alt=""></div>
+                    <div class="get_font_center" id="banner_num"></div>
+                    <div class="get_font_rigth" style="color: #ababab;">人</div>
+
+                </div>
+
+                <div class="font_line" style="color: #ababab;">
+                    通过下方搜索开始斗图把
+                </div>
+                <p>
+                    <a href="###" class="am-btn am-btn-sm get-btn  am-radius banner_ios am-icon-apple"> App store</a> <a href="###" class="am-btn am-btn-sm  am-radius get-btn banner_android am-icon-android">Android</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <form class="am-form am-form-horizontal" style="padding:3%;">
+        <div class="am-g">
+            <div class="am-u-lg-6">
+                <div class="am-input-group">
+                    <input type="text" class="am-form-field" id="input_text" placeholder="任意关键字！例如：金馆长">
+                    <span class="am-input-group-btn">
+                        <button class="am-btn am-btn-default" type="button" onclick="Ser(this)">搜索</button>
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+    </form>
+    <div class="am-panel am-panel-default">
+        <div class="am-panel-hd">搜索结果：</div>
+        <div class="am-panel-bd">
+            <div class="am-g am-imglist">
+                <ul data-am-widget="gallery" class="am-gallery am-avg-sm-2  am-avg-md-3 am-avg-lg-6 am-gallery-default" id="imgAll"></ul>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="am_footer">
+        <div class="am_footer_con">
+
+
+            <div class="am_footer_erweima">
+                <div class="am_footer_weixin">
+                    <img src="img/weixin.jpg" alt="">
+
+                    <div class="am_footer_d_gzwx am-icon-weixin"> 关注微信</div>
+                </div>
+                <div class="am_footer_ddon">
+                    <img src="img/weixin.jpg" alt="">
+
+                    <div class="am_footer_d_dxz am-icon-cloud-download">扫码赞助</div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="am_info_line">版本(c)2019 <span>版本权归作者所有</span> by KuangJianWu</div>
+    </footer>
+    <script src="js/petshow.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			Ser();
+		})
+		function Ser(_this) {
+			$(_this).button('loading');
+			$.get("https://www.doutula.com/api/search?keyword=" + ($("#input_text").val() == "" ? "斗图" : $("#input_text").val()) + "&mime=0&page=1", function (result) {
+				if (result.status == 1) {
+					var html = "";
+					for (var i = 0; i < result.data.list.length; i++) {
+						html += "<li>";
+						html += "    <div class='am-gallery-item am_list_block'>";
+						html += "        <a href='" + result.data.list[i].image_url + "' class='am_img_bg'>";
+						html += "            <img src='" + result.data.list[i].image_url + "' data-backup='" + result.data.list[i].image_url + "' class='img-responsive lazy image_dtb loaded' data-original='" + result.data.list[i].image_url + "' style='height: 100%;' data-was-processed='true'>";
+						html += "        </a>";
+						html += "        <div class='am_listimg_info'>";
+						html += "            <span class='am-icon-heart'> 132</span><span class='am-icon-comments'>67</span><span class='am_imglist_time'>0分钟前</span>";
+						html += "        </div>";
+						html += "    </div>";
+						html += "</li>";
+					}
+					$("#imgAll").empty().append(html);
+					$(_this).button('reset');
+				} else {
+					alert("查询有误，请联系作者")
+					$(_this).button('reset');
+				}
+			});
+		}
+	</script>
+</body>
+</html>
